@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #a3a5b3;
+    color: #333;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #9294a8;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"], textarea {
+    width: 20%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1rem;;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #4116db;
+}
+
+button#viewInboxButton {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button#viewInboxButton:hover {
+    background-color: #e50404;
+}
+
+/* Inbox Section */
+#inboxScreen {
+    margin-top: 20px;
+}
+
+#inboxContent {
+    margin-top: 10px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.message-card:hover {
+    background-color: #f1f1f1;
+}
+
+.message-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.message-card p {
+    font-size: 1rem;
+}
+
+
+button#clearInboxButton {
+    background-color: #e70f0f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#clearInboxButton:hover {
+    background-color: #cc0000;
+}
+
+button#clearCanvas {
+    background-color: #ef6161;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#clearCanvas:hover {
+    background-color: #cc0000;
+}

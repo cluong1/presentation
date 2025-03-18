@@ -1,0 +1,102 @@
+doctype html
+html
+head
+    title Welcome Page - Cameron Luong
+    link(rel="stylesheet", href="/stylesheet.css")
+    script(src="/script.js") 
+
+body
+    header
+        h1 Hello, welcome to my webpage!
+
+    if user 
+        div#user-info(style="position: fixed; top: 20px; right: 10px;")
+            p Current User: #{user}
+            form(action='/logout' method='POST')
+                button(type='submit') Log Out
+    else
+        p(style="position: fixed; top: 10px; right: 10px;") Please Log In
+    
+    
+
+    if !user
+
+        section#intro-creation
+            h2 To begin, let's create an account.
+
+        div#account-creation.screen
+            form#accountCreationForm(action="/check-username" method = "POST")  
+                div.form-group
+                    label(for="username") Username:
+                    input#createUsername(type="text" name="username" placeholder="Enter username")
+
+                div.form-group
+                    label(for="password") Password:
+                    input#createPassword(type="text" name = "password" placeholder="Enter password")
+                
+                div
+                    button#submitAccount(type="submit") Submit
+    
+        section#intro-login
+            h2 Already have an account? Let's login.
+
+        div#account-login.screen
+                form#accountLoginForm(action="/login" method= "POST")  
+                    div.form-group
+                        label(for="username") Username: 
+                        input#loginUsername(type="text" name="username" placeholder="Enter username")
+
+                    div.form-group
+                        label(for="password") Password:
+                        input#loginPassword(type="text" name="password" placeholder="Enter password")
+
+                    div 
+                        button#submitLogin(type="submit") Submit
+    
+    if user
+        div#sendMessageScreen.screen
+            h2 Send messages
+            form(id="sendMessageForm", action="/send-message", method = "POST")
+                div.form-group
+                    label(for="recipient") Recipient: 
+                    input#recipient(type="text" name="recipient" placeholder="Enter recipient username")
+                
+                div.form-group
+                    label(for="subject") Subject:
+                    input#subject(type="text" name="subject" placeholder="Enter subject")
+
+                div.form-group
+                label(for="body") Message:
+                textarea#body(name="body" rows="4" placeholder="Enter message body")
+
+                div.form-group
+                    label(for="drawing") Drawing: 
+                    canvas#drawingCanvas(width="500" height= "300")
+                    button#clearCanvas(type="button") Clear Drawing 
+
+                div
+                    button#sendButton(type="submit") Send Message
+
+            
+
+        div#inboxScreen.screen
+            h2 Inbox
+            div#inboxContent
+                if messages && messages.length > 0
+                    each message in messages 
+                        .message 
+                        p.sender From:  message.sender
+                        p.subject Subject:  message.subject
+                        p.body Body:  message.body
+                        if message.drawing && message.drawing !== ''
+                            img(src = message.drawing, alt="Drawing", style="max-width: 100%;")
+                        else
+                            canvas(style="display: none;")
+                        hr
+            
+                
+
+        // Button to show inbox
+        button(id="viewInboxButton") View Inbox
+        
+        button(id="clearInboxButton") Clear Inbox
